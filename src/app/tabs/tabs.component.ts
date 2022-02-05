@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlContainer } from '@angular/forms';
 
 @Component({
   selector: 'app-tabs',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly controlContainer: ControlContainer) { }
 
   ngOnInit() {
+    console.log(this.controlContainer);
   }
 
 }
