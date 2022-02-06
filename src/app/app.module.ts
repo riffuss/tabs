@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddressComponent } from './tabs/address/address.component';
+import { OfficeComponent } from './tabs/office/office.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabsComponent
+    TabsComponent,
+    AddressComponent,
+    OfficeComponent
   ],
   imports: [
     BrowserModule,

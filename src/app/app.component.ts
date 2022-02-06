@@ -10,7 +10,6 @@ import { TabsComponent } from './tabs/tabs.component';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'Custom tabs';
   form: FormGroup;
-  @ViewChild(TabsComponent, {static: false}) tabs;
   ngOnInit() {
     this.form = new FormGroup({
       firstName: new FormControl(''),
@@ -20,10 +19,11 @@ export class AppComponent implements OnInit, AfterViewInit {
     });
   }
   ngAfterViewInit() {
-    console.log(this.tabs);
   }
 
   onSubmit() {
-    console.log(this.form);
+    if (this.form.valid) {
+      console.log(this.form, this.form.value.shipping);
+    }
   }
 }
