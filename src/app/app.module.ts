@@ -8,8 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './tabs/address/address.component';
 import { OfficeComponent } from './tabs/office/office.component';
 import { TabComponent } from './tabs/tab/tab.component';
-import { TabLabelComponent } from './tabs/tab/tab-label/tab-label.component';
-import { TabContentComponent } from './tabs/tab/tab-content/tab-content.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +16,6 @@ import { TabContentComponent } from './tabs/tab/tab-content/tab-content.componen
     AddressComponent,
     OfficeComponent,
     TabComponent,
-    TabLabelComponent,
-    TabContentComponent
   ],
   imports: [
     BrowserModule,

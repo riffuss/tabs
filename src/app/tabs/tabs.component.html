@@ -1,6 +1,13 @@
-<h2>Варианты доставки</h2>
-<hr>
+<ul class="tabs" #tabsRef>
+  <li
+    class="tabs-item"
+    *ngFor="let tab of tabList"
+    (click)="onClick($event, tab)"
+  >
+    {{tab?.label}}
+  </li>
+</ul>
 <!--<ng-container *ngFor="let tab of tabList">-->
 <!--  <ng-content select="app-tab"></ng-content>-->
 <!--</ng-container>-->
-<ng-content></ng-content>
+<ng-content select="app-tab"></ng-content>

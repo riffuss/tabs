@@ -1,4 +1,14 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChildren, OnInit, QueryList } from '@angular/core';
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  OnInit,
+  QueryList,
+  Renderer2,
+  ViewChild
+} from '@angular/core';
 import {ControlContainer, Form, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import { TabComponent } from './tab/tab.component';
 
@@ -8,8 +18,9 @@ import { TabComponent } from './tab/tab.component';
   styleUrls: ['./tabs.component.less']
 })
 export class TabsComponent implements OnInit,  AfterContentInit {
+  @ViewChild('tabsRef', {static: true}) private tabsRef: ElementRef;
   @ContentChildren(TabComponent, {read: TabComponent}) tabList: QueryList<any>;
-  constructor(private readonly controlContainer: ControlContainer) { }
+  constructor(private readonly controlContainer: ControlContainer, private r2: Renderer2) { }
 
   ngOnInit() {
   }
@@ -24,5 +35,15 @@ export class TabsComponent implements OnInit,  AfterContentInit {
     // parentForm.controls[tabControlName] = this.form;
     // parentForm.updateValueAndValidity();
   }
-
+  setLabelActive(labels: ElementRef, current) {
+    Array.from(labels.nativeElement.children).forEach((item: HTMLElement) => {
+      item === current ? item.classList.add('active') : item.classList.remove('active');
+    });
+  }
+  onClick(e, tab: TabComponent) {
+    this.setLabelActive(this.tabsRef, e.target);
+    this.tabList.forEach((item: TabComponent) => {
+      item.isActive = item === tab;
+    });
+  }
 }

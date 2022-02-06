@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Main Form</h1>
   <form
-    class="form"
+    class="form form_main"
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
   >
@@ -35,18 +35,14 @@
       >
     </div>
     <div class="form-control">
+      <h2>Варианты доставки</h2>
+      <hr>
       <app-tabs formGroupName="shipping">
-        <app-tab>
-          <app-tab-label>Доставка курьером</app-tab-label>
-          <app-tab-content>
+        <app-tab label="Доставка курьером" [defaultActive]="true">
             <app-address></app-address>
-          </app-tab-content>
         </app-tab>
-        <app-tab>
-          <app-tab-label>Забрать в офисе</app-tab-label>
-          <app-tab-content>
+        <app-tab label="Забрать в офисе">
             <app-office></app-office>
-          </app-tab-content>
         </app-tab>
       </app-tabs>
     </div>
