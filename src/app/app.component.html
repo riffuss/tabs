@@ -35,7 +35,20 @@
       >
     </div>
     <div class="form-control">
-      <app-tabs formGroupName="shipping"></app-tabs>
+      <app-tabs formGroupName="shipping">
+        <app-tab>
+          <app-tab-label>Доставка курьером</app-tab-label>
+          <app-tab-content>
+            <app-address></app-address>
+          </app-tab-content>
+        </app-tab>
+        <app-tab>
+          <app-tab-label>Забрать в офисе</app-tab-label>
+          <app-tab-content>
+            <app-office></app-office>
+          </app-tab-content>
+        </app-tab>
+      </app-tabs>
     </div>
     <button type="submit" class="form-button">Далее</button>
   </form>

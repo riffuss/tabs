@@ -1,1 +1,27 @@
-<p>office works!</p>
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="form-control">
+    <label class="form-label" for="city">Город</label>
+    <input
+      type="text"
+      class="form-input"
+      id="city"
+      placeholder="Москва"
+      formControlName="city"
+    >
+  </div>
+  <div class="form-control">
+    <label class="form-label" for="office">Офис</label>
+    <input
+      type="text"
+      class="form-input"
+      id="office"
+      placeholder="Ленина ул."
+      formControlName="office">
+  </div>
+</form>
+
+

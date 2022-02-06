@@ -1,1 +1,46 @@
-<p>address works!</p>
+<form
+  class="form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="form-control">
+    <label class="form-label" for="city">Город</label>
+    <input
+      type="text"
+      class="form-input"
+      id="city"
+      placeholder="Москва"
+      formControlName="city"
+    >
+  </div>
+  <div class="form-control">
+    <label class="form-label" for="street">Улица</label>
+    <input
+      type="text"
+      class="form-input"
+      id="street"
+      placeholder="Ленина ул."
+      formControlName="street">
+  </div>
+  <div class="form-control">
+    <label class="form-label" for="house">Дом</label>
+    <input
+      type="text"
+      class="form-input"
+      id="house"
+      placeholder="д.29"
+      formControlName="house"
+    >
+  </div>
+  <div class="form-control">
+    <label class="form-label" for="flat">Квартира</label>
+    <input
+      type="text"
+      class="form-input"
+      id="flat"
+      placeholder="кв.61"
+      formControlName="flat"
+    >
+  </div>
+</form>
+
