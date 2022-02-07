@@ -20,6 +20,6 @@ export class AddressComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit Address');
+    // console.log('Submit Address');
   }
 }

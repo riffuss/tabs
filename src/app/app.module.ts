@@ -8,6 +8,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './tabs/address/address.component';
 import { OfficeComponent } from './tabs/office/office.component';
 import { TabComponent } from './tabs/tab/tab.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
+import { TabLabelComponent } from './tabs/tab-label/tab-label.component';
+import { TabLabelListComponent } from './tabs/tab-label-list/tab-label-list.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { TabComponent } from './tabs/tab/tab.component';
     AddressComponent,
     OfficeComponent,
     TabComponent,
+    TabLabelComponent,
+    TabLabelListComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   entryComponents: [TabComponent],
   providers: [],

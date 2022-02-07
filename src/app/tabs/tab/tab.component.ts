@@ -18,14 +18,12 @@ export class TabComponent implements OnInit, AfterContentInit {
   }
 
   ngOnInit() {
-    this.isActive = this.defaultActive;
+    // this.isActive = this.defaultActive;
   }
   ngAfterContentInit() {
-    console.log(this.el, this.r2);
     // this.form = this.content.form;
   }
   show() {
-    console.log(this.el.nativeElement);
     this.r2.removeClass(this.el.nativeElement, 'hide');
   }
   hide() {

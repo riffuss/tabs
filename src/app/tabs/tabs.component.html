@@ -1,13 +1,15 @@
-<ul class="tabs" #tabsRef>
-  <li
-    class="tabs-item"
-    *ngFor="let tab of tabList"
-    (click)="onClick($event, tab)"
-  >
-    {{tab?.label}}
-  </li>
-</ul>
-<!--<ng-container *ngFor="let tab of tabList">-->
-<!--  <ng-content select="app-tab"></ng-content>-->
-<!--</ng-container>-->
+
+
+
+<app-tab-label-list
+  [tabList]="tabList"
+></app-tab-label-list>
+<br>
+<br>
+<hr>
+<!--<mat-tab-group>-->
+<!--  <mat-tab label="First"> <app-address></app-address> </mat-tab>-->
+<!--  <mat-tab label="Second"> <app-office></app-office> </mat-tab>-->
+<!--  <mat-tab label="Third"> Content 3 </mat-tab>-->
+<!--</mat-tab-group>-->
 <ng-content select="app-tab"></ng-content>
