@@ -22,6 +22,7 @@ import { TabComponent } from './tabs/tab/tab.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
+  entryComponents: [TabComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, Input, OnInit} from '@angular/core';
+import { AfterContentInit, Component, ContentChild, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ export class TabComponent implements OnInit, AfterContentInit {
 
   isActive: boolean;
   form: FormGroup;
-  constructor() {
+  constructor(private el: ElementRef, private r2: Renderer2) {
 
   }
 
@@ -21,7 +21,14 @@ export class TabComponent implements OnInit, AfterContentInit {
     this.isActive = this.defaultActive;
   }
   ngAfterContentInit() {
-    console.log(this.content);
+    console.log(this.el, this.r2);
     // this.form = this.content.form;
+  }
+  show() {
+    console.log(this.el.nativeElement);
+    this.r2.removeClass(this.el.nativeElement, 'hide');
+  }
+  hide() {
+    this.r2.addClass(this.el.nativeElement, 'hide');
   }
 }
