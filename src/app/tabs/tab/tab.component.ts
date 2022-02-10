@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ContentChild, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, Renderer2 } from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import {FormGroup} from '@angular/forms';
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.less']
 })
-export class TabComponent implements OnInit, AfterContentInit {
+export class TabComponent {
   @Input() label: string;
   @Input() defaultActive: boolean;
   @ContentChild('content', {static: true}) content;
@@ -17,12 +17,6 @@ export class TabComponent implements OnInit, AfterContentInit {
 
   }
 
-  ngOnInit() {
-    // this.isActive = this.defaultActive;
-  }
-  ngAfterContentInit() {
-    // this.form = this.content.form;
-  }
   show() {
     this.r2.removeClass(this.el.nativeElement, 'hide');
   }
