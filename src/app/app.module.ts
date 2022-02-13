@@ -2,28 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { TabsComponent } from './tabs/tabs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddressComponent } from './components/address/address.component';
 import { OfficeComponent } from './components/office/office.component';
-import { TabComponent } from './tabs/tab/tab.component';
+import {DeliveryTypeComponent} from './tabs/delivery-type/delivery-type.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
-import { TabLabelComponent } from './tabs/tab-label/tab-label.component';
-import { TabLabelListComponent } from './tabs/tab-label-list/tab-label-list.component';
-import { DeliveryComponent } from './delivery/delivery.component';
+import { DeliveryLabelComponent } from './tabs/delivery-label/delivery-label.component';
+import { DeliveryLabelListComponent } from './tabs/delivery-label-list/delivery-label-list.component';
+import { DeliveryCourierComponent } from './components/delivery-courier/delivery-courier.component';
+import {DeliveryComponent} from './tabs/delivery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TabsComponent,
+    DeliveryComponent,
     AddressComponent,
     OfficeComponent,
-    TabComponent,
-    TabLabelComponent,
-    TabLabelListComponent,
-    DeliveryComponent,
+    DeliveryTypeComponent,
+    DeliveryLabelComponent,
+    DeliveryLabelListComponent,
+    DeliveryCourierComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +32,6 @@ import { DeliveryComponent } from './delivery/delivery.component';
     BrowserAnimationsModule,
     MatTabsModule
   ],
-  entryComponents: [TabComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

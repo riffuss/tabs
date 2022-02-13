@@ -6,15 +6,15 @@ import {
   QueryList,
 } from '@angular/core';
 import {ControlContainer, Form, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
-import { TabComponent } from './tab/tab.component';
+import {DeliveryTypeComponent} from './delivery-type/delivery-type.component';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.less']
+  selector: 'app-delivery',
+  templateUrl: './delivery.component.html',
+  styleUrls: ['./delivery.component.less']
 })
-export class TabsComponent implements OnInit,  AfterContentInit {
-  @ContentChildren(TabComponent, {read: TabComponent}) tabList: QueryList<any>;
+export class DeliveryComponent implements OnInit,  AfterContentInit {
+  @ContentChildren(DeliveryTypeComponent, {read: DeliveryTypeComponent}) tabList: QueryList<any>;
   constructor(private readonly controlContainer: ControlContainer) { }
 
   ngOnInit() {

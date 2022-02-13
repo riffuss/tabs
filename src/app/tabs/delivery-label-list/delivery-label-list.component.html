@@ -1,8 +1,8 @@
 <div class="tab-label-list">
-  <app-tab-label
+  <app-delivery-label
     *ngFor="let tab of tabList; let index = index;"
     [tab]="tab"
     [tabIndex]="index"
     (isActive)="onActive($event)"
-  ></app-tab-label>
+  ></app-delivery-label>
 </div>

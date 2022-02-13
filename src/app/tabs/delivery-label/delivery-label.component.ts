@@ -1,13 +1,13 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer2 } from '@angular/core';
-import { TabComponent } from '../tab/tab.component';
+import {DeliveryTypeComponent} from '../delivery-type/delivery-type.component';
 
 @Component({
-  selector: 'app-tab-label',
-  templateUrl: './tab-label.component.html',
-  styleUrls: ['./tab-label.component.less']
+  selector: 'app-delivery-label',
+  templateUrl: './delivery-label.component.html',
+  styleUrls: ['./delivery-label.component.less']
 })
-export class TabLabelComponent implements OnInit {
-  @Input() tab: TabComponent;
+export class DeliveryLabelComponent implements OnInit {
+  @Input() tab: DeliveryTypeComponent;
   @Input() tabIndex: number;
   @Output() isActive: EventEmitter<number> = new EventEmitter<number>();
   @HostListener('click', ['$event']) onClick(e) {

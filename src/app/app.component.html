@@ -37,17 +37,17 @@
     <div class="form-control">
       <h2>Варианты доставки</h2>
       <hr>
-      <app-tabs formGroupName="shipping">
-        <app-tab label="Доставка курьером">
-            <app-address></app-address>
-        </app-tab>
-        <app-tab label="Забрать в офисе" [defaultActive]="true">
+      <app-delivery formGroupName="shipping">
+        <app-delivery-type label="Доставка курьером">
+          <app-delivery-courier></app-delivery-courier>
+        </app-delivery-type>
+        <app-delivery-type label="Забрать в офисе" [defaultActive]="true">
             <app-office></app-office>
-        </app-tab>
-        <app-tab label="Пункт выдачи">
+        </app-delivery-type>
+        <app-delivery-type label="Пункт выдачи">
           <p>Вы можете забрать в пункте выдачи по адресу: дер.Пупки д.10</p>
-        </app-tab>
-      </app-tabs>
+        </app-delivery-type>
+      </app-delivery>
     </div>
     <button type="submit" class="form-button">Далее</button>
   </form>

@@ -2,11 +2,11 @@ import { Component, ContentChild, ElementRef, Input, Renderer2 } from '@angular/
 import {FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-tab',
-  templateUrl: './tab.component.html',
-  styleUrls: ['./tab.component.less']
+  selector: 'app-delivery-type',
+  templateUrl: './delivery-type.component.html',
+  styleUrls: ['./delivery-type.component.less']
 })
-export class TabComponent {
+export class DeliveryTypeComponent {
   @Input() label: string;
   @Input() defaultActive: boolean;
   @ContentChild('content', {static: true}) content;

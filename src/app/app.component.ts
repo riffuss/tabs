@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { TabsComponent } from './tabs/tabs.component';
 
 @Component({
   selector: 'app-root',
