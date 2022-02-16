@@ -38,14 +38,14 @@
       <h2>Варианты доставки</h2>
       <hr>
       <app-delivery formGroupName="shipping">
-        <app-delivery-type label="Доставка курьером">
-          <app-delivery-courier></app-delivery-courier>
+        <app-delivery-type label="Доставка курьером" [defaultActive]="true">
+          <app-delivery-courier #type></app-delivery-courier>
         </app-delivery-type>
-        <app-delivery-type label="Забрать в офисе" [defaultActive]="true">
-            <app-office></app-office>
+        <app-delivery-type label="Забрать в офисе">
+          <app-office  #type></app-office>
         </app-delivery-type>
         <app-delivery-type label="Пункт выдачи">
-          <p>Вы можете забрать в пункте выдачи по адресу: дер.Пупки д.10</p>
+          <p #type>Вы можете забрать в пункте выдачи по адресу: дер.Пупки д.10</p>
         </app-delivery-type>
       </app-delivery>
     </div>

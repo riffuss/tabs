@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   onSubmit() {
     if (this.form.valid) {
-      // console.log(this.form, this.form.value.shipping);
+      console.log(this.form);
     }
   }
 }

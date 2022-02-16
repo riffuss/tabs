@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import {ControlContainer, Form, FormControl, FormGroup, FormGroupDirective, Validators} from '@angular/forms';
 import {DeliveryTypeComponent} from './delivery-type/delivery-type.component';
+import { TabActive } from './delivery-label/delivery-label.component';
 
 @Component({
   selector: 'app-delivery',
@@ -20,14 +21,26 @@ export class DeliveryComponent implements OnInit,  AfterContentInit {
   ngOnInit() {
   }
   ngAfterContentInit() {
-    this.bindParentForm();
+    // this.bindParentForm();
   }
 
-  bindParentForm() {
+  bindParentForm(tab: DeliveryTypeComponent) {
+    // console.log('active Tab: ', tab);
     const parentForm = (this.controlContainer.formDirective as FormGroupDirective).form as FormGroup;
-    const tabControlName = this.controlContainer.name;
-    // console.log(this.tabList);
-    // parentForm.controls[tabControlName] = this.form;
-    // parentForm.updateValueAndValidity();
+    const tabControlName = this.controlContainer.name.toString();
+
+    if (tab?.form) {
+      parentForm.setControl(tabControlName, tab.form)
+      parentForm.updateValueAndValidity();
+      console.log(parentForm.controls);
+
+    } else {
+      parentForm.removeControl(tabControlName);
+      console.log(parentForm.controls);
+    }
+  }
+
+  onChange($event: TabActive) {
+    this.bindParentForm($event.tab)
   }
 }

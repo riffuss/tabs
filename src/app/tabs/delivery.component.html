@@ -1,4 +1,5 @@
 <app-delivery-label-list
   [tabList]="tabList"
+  (tabOnChange)="onChange($event)"
 ></app-delivery-label-list>
 <ng-content select="app-delivery-type"></ng-content>
